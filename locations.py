@@ -26,7 +26,7 @@ for location in locations:
 
 while True:
     try:
-        start_quiz = input("Are you to do the quiz? [yes]")
+        start_quiz = input("Are you ready to do the quiz? [yes]")
         if start_quiz != 'yes':
             raise ValueError()
         break
