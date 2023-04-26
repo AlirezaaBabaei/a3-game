@@ -2,6 +2,7 @@ import pygame
 from read_file import generate_questions
 from locations import location_finder
 from calculate_score import calculate_score, calculate_winner
+from colored import fg 
 import time
 
 teams = [{ 'Team1' : {"names": ["Jack", "George"], "score": 55.0}},
@@ -11,7 +12,7 @@ TEAM_1 = { 'Team1' : {"names": [], "score": 55.0}}
 TEAM_2 = { 'Team2' : {"names": [], "score": 60.0}}
 
 def print_ranking(ranking : list):
-    print("---- RANKING ----")
+    print(fg('magenta') + "---- RANKING ----")
     for team in ranking:
         print(f"{team['team_name'] : <7}: {team['score']}%   |   {team['names']}")
 
