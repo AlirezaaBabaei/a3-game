@@ -24,4 +24,14 @@ def calculate_score(questions):
             print(f"Incorrect. The correct answer is: {question['answer']}")
     
     score = num_correct / len(questions) * 100
+    score = round(score, 2)
     return score
+
+def calculate_winner(teams : list) -> list:
+    scores = []
+    for team in teams:
+        for score in team.keys():
+            team_score = {'team_name': score, 'score': team[score]["score"] }
+            scores.append(team_score)
+    newlist = sorted(scores, key=lambda score: score['score'], reverse = True) 
+    return newlist   
