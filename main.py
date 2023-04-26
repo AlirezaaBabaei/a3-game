@@ -2,9 +2,10 @@ import pygame
 from read_file import generate_questions
 from locations import location_finder
 from calculate_score import calculate_score, calculate_winner
+import time
 
-teams = [{ 'Team1' : {"names": [], "score": 55.0}},
-          {'Team2' : {"names": [], "score": 60.0}}]
+teams = [{ 'Team1' : {"names": ["Jack", "George"], "score": 55.0}},
+          {'Team2' : {"names": ["Alice", "Tom"], "score": 60.0}}]
 
 TEAM_1 = { 'Team1' : {"names": [], "score": 55.0}}
 TEAM_2 = { 'Team2' : {"names": [], "score": 60.0}}
@@ -12,7 +13,7 @@ TEAM_2 = { 'Team2' : {"names": [], "score": 60.0}}
 def print_ranking(ranking : list):
     print("---- RANKING ----")
     for team in ranking:
-        print(f"{team['team_name']}: {team['score']}%")
+        print(f"{team['team_name'] : <7}: {team['score']}%   |   {team['names']}")
 
 
 def main():
@@ -51,6 +52,8 @@ def main():
         pygame.init()
         pygame.mixer.music.load("end.mp3")
         pygame.mixer.music.play()
+        time.sleep(5)
+
         break
 
 if __name__ == "__main__":
